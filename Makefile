@@ -9,3 +9,6 @@ normal:
 
 run:
 	make -C src run
+
+test:
+	@echo "working"
