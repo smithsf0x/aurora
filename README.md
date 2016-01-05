@@ -1,5 +1,7 @@
 # aurora
+
 ####A TileEngine made with glib2D for the PlayStation Portable
+[![Build Status](https://travis-ci.org/smithsf0x/aurora.svg?branch=master)](https://travis-ci.org/smithsf0x/aurora)
 
 ##Features
 - up to 3 Layers per Map
