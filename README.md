@@ -1,5 +1,9 @@
 # aurora
 ####A TileEngine made with glib2D for the PlayStation Portable
+ 
+   
+
+[![](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 
 ##Features
 - up to 3 Layers per Map
