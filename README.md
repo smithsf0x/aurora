@@ -9,41 +9,8 @@
 ##Features
 - up to 3 Layers per Map
 - Universal Player/NPC class
-- DeltaTime
-
-##Folder structures
-
-Example: 
-
-```c
-|-- EBOOT.PBP
-|-- maps/
-	|-- island/
-		|-- island.png
-		|-- island_l1.csv
-		|-- island_l2.csv
-	|-- house_1/
-		|-- house_1.png
-		|-- house_1.csv
-|-- assets/
-	|-- player/
-		|-- player.png
-	|-- npc/
-		|-- guard/
-			|-- guard.png
-		|-- witch/
-			|-- witch.png
-			|-- witch_2.png
-|-- sounds/
-```
-
-###Maps
-Path: `maps/nameOfMap`
-
-Every map has an `.png` and at least one `.csv` file. The name of the tileset and data file is just the name of the map e.g: `nameOfMap.png` and `nameOfMap_l1.csv`, `nameOfMap_l2.csv`,`nameOfMap_l3.csv` ( layer 2 and 3 are optional). 
-
-###Character
-
+- DeltaTime animations and movement
+- CSV-decoded info-file for Maps
 
 ##Usage
 
@@ -91,6 +58,44 @@ int main(){
 }
 ```
 
+##Folder structures
+
+Example: 
+
+```c
+|-- EBOOT.PBP
+|-- maps/
+	|-- island/
+		|-- island.png
+		|-- island_l1.csv
+		|-- island_l2.csv
+	|-- house_1/
+		|-- house_1.png
+		|-- house_1.csv
+|-- assets/
+	|-- player/
+		|-- player.png
+	|-- npc/
+		|-- guard/
+			|-- guard.png
+		|-- witch/
+			|-- witch.png
+			|-- witch_2.png
+|-- sounds/
+```
+
+###Maps
+Path: `maps/nameOfMap`
+
+Every map has an `.png` and at least one `.csv` file. The name of the tileset and data file is just the name of the map e.g: `nameOfMap.png` and `nameOfMap_l1.csv`, `nameOfMap_l2.csv`,`nameOfMap_l3.csv` ( layer 2 and 3 are optional). 
+
+Can be easily created with **[Tiled](http://www.mapeditor.org)**. Just name the layers **_l1**, **_l2**, **_l3** and export the project as `.csv`.
+
+###Character
+
+***Not implemented at the moment***
+
+
 ##Bugs
 - Diagonal player movement only right/down and up/left
 
@@ -98,6 +103,12 @@ int main(){
 ##Building
 - Copy the aurora-folder to your source directory
 -  Add ` aurora/aurora.o` and `glib2d/glib2d.o` to your objects and link `-lpng -ljpeg -lz -lpspgu -lm -lpspvram` in your Makefile
+
+## TODO
+
+- Dedicated Player, NPC, Objects and Sound loading
+- Camera / Viewport
+
 
 ##License
 
