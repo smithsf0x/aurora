@@ -18,6 +18,6 @@
 #include "aurora/aurora.h"
 #include "common/callback.h"
 
-#include "libcsv/libcsv.h"
+#include "csvlib/csvlib.h"
 #include "glib2d/glib2d.h"
 
