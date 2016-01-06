@@ -2,7 +2,7 @@
 * @Author: ich
 * @Date:   2015-12-25 02:10:03
 * @Last Modified by:   smithsf0x
-* @Last Modified time: 2016-01-05 00:30:47
+* @Last Modified time: 2016-01-05 13:23:06
 */
 
 #include "main.h"
@@ -20,7 +20,7 @@ int main(){
     auraInit();
 
 	setupExitCallback();
-    g2dInit();
+
 
     _aura_map* mapIsland = auraLoadMap("island", 2, 40, 20, 16);
 
@@ -39,11 +39,11 @@ int main(){
 
         auraStartCycle();
 
-        g2dClear(WHITE);
-
         auraGetInput();
 
-        auraMoveChar( player);
+        g2dClear(WHITE);
+
+        auraMovePlayer( player);
         if(player->facing == 1){
             player->x = floor(player->x);
         }

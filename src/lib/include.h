@@ -1,5 +1,5 @@
 
-#define DEBUGa
+#define DEBUG
 
 #include <pspkernel.h>
 #include <pspctrl.h>

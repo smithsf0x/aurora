@@ -2,7 +2,7 @@
 * @Author: smithsf0x
 * @Date:   2015-12-27 01:16:10
 * @Last Modified by:   smithsf0x
-* @Last Modified time: 2015-12-27 01:23:35
+* @Last Modified time: 2016-01-06 14:34:27
 */
 
 #include "libcsv.h"
@@ -94,8 +94,7 @@ int* readCSV(const char * path){
             ptr = strtok(NULL, delimiter);
         }
     }
-    //fclose(fp);
-    sceIoClose(fp);
+    fclose(fp);
     if (line) free(line);
     #ifdef DEBUG
         printf("--> readCSV() END // OK\n");

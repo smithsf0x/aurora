@@ -63,7 +63,8 @@ void auraEndCycle();
 _aura_map* auraLoadMap(char* mapName, int layer, int mapW, int mapH, int tilesize);
 void auraGetInput();
 void auraDrawMap(_aura_map* mapToDraw, int layer, int x, int y);
-void auraMoveChar(_aura_character* curChar);
+void auraMovePlayer(_aura_character* curChar);
+void auraMoveChar(_aura_character* curChar, int destx, int desty, float eta);
 void auraDrawChar(_aura_character* curChar);
 void auraGameCycle();
 

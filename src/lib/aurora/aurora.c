@@ -2,7 +2,7 @@
 * @Author: ich
 * @Date:   2015-12-25 00:38:23
 * @Last Modified by:   smithsf0x
-* @Last Modified time: 2016-01-05 00:27:14
+* @Last Modified time: 2016-01-06 14:35:31
 */
 
 #include "aurora.h"
@@ -15,6 +15,7 @@ int auraInit() {
     #endif
 
     time = malloc(sizeof(pspTime));
+    g2dInit();
 
     return 0;
 }
@@ -38,7 +39,7 @@ void auraEndCycle(){
 _aura_map* auraLoadMap(char* mapName, int layer, int mapW, int mapH, int tilesize){
 
     #ifdef DEBUG
-        printf("--> auraLoadMap(%s, %s, %d, %d, %d) \n", tileset, mapdata, mapW, mapH, tilesize);
+        printf("--> auraLoadMap(%s, %d, %d, %d, %d) \n", mapName, layer, mapW, mapH, tilesize);
     #endif
 
     _aura_map* tempMap = malloc(sizeof(_aura_map));
@@ -173,7 +174,7 @@ void auraDrawMap(_aura_map* mapToDraw, int layer, int xOffset, int yOffset){
     }
 }
 
-void auraMoveChar(_aura_character* curChar){
+void auraMovePlayer(_aura_character* curChar){
     int curTile = 0;
 
     int tleft, tright, ttop, tbottom;

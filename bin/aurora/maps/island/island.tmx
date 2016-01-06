@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="20" tilewidth="16" tileheight="16" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="20" tilewidth="16" tileheight="16" nextobjectid="6">
  <tileset firstgid="1" name="island" tilewidth="16" tileheight="16" tilecount="120" columns="8">
   <image source="island.png" width="128" height="240"/>
  </tileset>
@@ -51,4 +51,8 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup name="o1">
+  <object id="1" x="191" y="94" width="96" height="76"/>
+  <object id="4" x="471" y="27"/>
+ </objectgroup>
 </map>
