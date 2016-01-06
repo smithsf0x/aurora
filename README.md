@@ -102,7 +102,7 @@ Can be easily created with **[Tiled](http://www.mapeditor.org)**. Just name the 
 
 ##Building
 - Copy the aurora-folder to your source directory
--  Add ` aurora/aurora.o` and `glib2d/glib2d.o` to your objects and link `-lpng -ljpeg -lz -lpspgu -lm -lpspvram` in your Makefile
+-  Add ` aurora/aurora.o`, `csvlib/csvlib.o` and `glib2d/glib2d.o` to your objects and link `-lpng -ljpeg -lz -lpspgu -lm -lpspvram` in your Makefile
 
 ## TODO
 
