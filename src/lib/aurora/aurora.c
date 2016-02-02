@@ -2,7 +2,7 @@
 * @Author: ich
 * @Date:   2015-12-25 00:38:23
 * @Last Modified by:   smithsf0x
-* @Last Modified time: 2016-01-06 14:35:31
+* @Last Modified time: 2016-01-29 23:05:05
 */
 
 #include "aurora.h"
@@ -16,6 +16,8 @@ int auraInit() {
 
     time = malloc(sizeof(pspTime));
     g2dInit();
+    sceCtrlSetSamplingCycle(0);
+    sceCtrlSetSamplingMode(PSP_CTRL_MODE_ANALOG);
 
     return 0;
 }
@@ -123,6 +125,7 @@ _aura_map* auraLoadMap(char* mapName, int layer, int mapW, int mapH, int tilesiz
 
 void auraGetInput(){
     sceCtrlPeekBufferPositive(&auraPadInput, 1);
+
 }
 
 void auraDrawMap(_aura_map* mapToDraw, int layer, int xOffset, int yOffset){
@@ -141,6 +144,7 @@ void auraDrawMap(_aura_map* mapToDraw, int layer, int xOffset, int yOffset){
         #endif
         return ;
     }
+
     for(x = 0; x < mapToDraw->w; x++){
         for(y = 0; y < mapToDraw->h; y++){
             g2dBeginRects(mapToDraw->tileset);
@@ -281,10 +285,11 @@ void auraMovePlayer(_aura_character* curChar){
         }
     }
 
-    if( curChar->positionx != curChar->positionx_old || curChar->positiony != curChar->positiony_old  ){
+    if( curChar->positionx != curChar->positionx_old ||
+        curChar->positiony != curChar->positiony_old  ){
         printf("--> posx: %d posy: %d || tleft: %d tright: %d ttop: %d tbottom: %d\n",
-         curChar->positionx, curChar->positiony, curMap->map[tleft],
-         curMap->map[tright], curMap->map[ttop], curMap->map[tbottom]);
+        curChar->positionx, curChar->positiony, curMap->map[tleft],
+        curMap->map[tright], curMap->map[ttop], curMap->map[tbottom]);
     }
 
     curChar->positionx_old = curChar->positionx;
@@ -336,6 +341,4 @@ void auraGameCycle(){
 
 void auraDrawGUI(){
 
-
 }
-

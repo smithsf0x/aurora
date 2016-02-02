@@ -2,7 +2,7 @@
 * @Author: ich
 * @Date:   2015-12-25 02:10:03
 * @Last Modified by:   smithsf0x
-* @Last Modified time: 2016-01-05 13:23:06
+* @Last Modified time: 2016-01-18 21:41:33
 */
 
 #include "main.h"
@@ -35,6 +35,9 @@ int main(){
     player->w = curMap->tilesize;
     player->h = curMap->tilesize;
 
+    float offx = 0;
+    float offy = 0;
+
 	while (isRunning()){
 
         auraStartCycle();
@@ -44,6 +47,7 @@ int main(){
         g2dClear(WHITE);
 
         auraMovePlayer( player);
+
         if(player->facing == 1){
             player->x = floor(player->x);
         }
@@ -57,8 +61,31 @@ int main(){
             player->y = ceil(player->y);
         }
 
-        auraDrawMap(curMap, 1, 0, 0);
-        auraDrawMap(curMap, 2, 0, 0);
+
+
+        if(auraPadInput.Ly < 64){
+            // UP
+            //printf("--> UP\n");
+            offy += 2 * dt;
+        }
+        if(auraPadInput.Ly > 192){
+            // Down
+            //printf("--> DOWN\n");
+            offy -= 2 * dt;
+        }
+        if(auraPadInput.Lx < 64){
+            // LEFT
+            //printf("--> LEFT\n");
+            offx += 2 * dt;
+        }
+        if(auraPadInput.Lx > 192){
+            // RIGHT
+            //printf("--> RIGHT\n");
+            offx -= 2 * dt;
+        }
+
+        auraDrawMap(curMap, 1, offx, offy);
+        auraDrawMap(curMap, 2, offx, offy);
 
         auraDrawChar( player);
         g2dEnd();

@@ -3,14 +3,13 @@
 ####A TileEngine made with glib2D for the PlayStation Portable 
    
 
-[![](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
+[![Repo Status](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![Build Status](https://travis-ci.org/smithsf0x/aurora.svg?branch=master)](https://travis-ci.org/smithsf0x/aurora)
 
 ##Features
 - up to 3 Layers per Map
 - Universal Player/NPC class
 - DeltaTime animations and movement
-- CSV-decoded info-file for Maps
 
 ##Usage
 
@@ -89,9 +88,13 @@ Path: `maps/nameOfMap`
 
 Every map has an `.png` and at least one `.csv` file. The name of the tileset and data file is just the name of the map e.g: `nameOfMap.png` and `nameOfMap_l1.csv`, `nameOfMap_l2.csv`,`nameOfMap_l3.csv` ( layer 2 and 3 are optional). 
 
-Can be easily created with **[Tiled](http://www.mapeditor.org)**. Just name the layers **_l1**, **_l2**, **_l3** and export the project as `.csv`.
+Can be easily created with **[Tiled](http://www.mapeditor.org)**. Just name the tilelayers **_l1**, **_l2**, **_l3** and export the project as `.csv`.
 
 ###Character
+
+***Not implemented at the moment***
+
+###Sounds
 
 ***Not implemented at the moment***
 
